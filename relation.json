@@ -91,7 +91,14 @@
             "image" : "reg.png",
             "department": "游戏组",
             "info": "策划"
-        }               
+        },
+        {
+            "name": "cyy",
+            "id" : "yyc",
+            "image" : "cyy.png",
+            "department": "合约组",
+            "info": "合约"
+        }
   ],
   "edges": [
         { 
@@ -153,6 +160,11 @@
             "source": "kds", 
             "target": "reg", 
             "weight": 1 
-        }                               
+        },
+        {
+          "source": "minakokojima",
+          "target": "yyc",
+          "weight": 1
+        }
   ]
 }
