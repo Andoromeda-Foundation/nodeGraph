@@ -83,7 +83,7 @@
             "id" : "kds",            
             "image" : "kds.png",
             "department": "游戏组",
-            "info": "<a href=\"http://www.h5indiegame.com:9955/\">h5indiegame</a> | <a href=\"http://www.kdsrpg.com/\">kdsrpg</a>"
+            "info": "for test<a href=\"http://www.h5indiegame.com:9955/\">h5indiegame</a> | <a href=\"http://www.kdsrpg.com/\">kdsrpg</a>"
         },    
         { 
             "name": "瓢虫", 
