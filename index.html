@@ -57,7 +57,9 @@
 		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script>
 
-			reload('所有部门','all');
+			$(function(){
+				reload('所有部门','all');
+			});
 
 			function isInArray(value, array) {
 				return array.indexOf(value) > -1;
