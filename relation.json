@@ -3,127 +3,109 @@
         {
             "nickname": "岛娘",
             "id": "minakokojima",
-            "image" : "minakokojima.png",
             "mission" : "People, Fund, Strategy",
             "department": "合约组，工具组",
             "info": "<a href=\"https://www.shuizilong.com/house/\">blog</a> | <a href=\"https://github.com/lychees\">github</a>"
         },
         { 
             "name": "海虹", 
-            "id" : "haihongS",
-            "image" : "haihong.png",
+            "id" : "haihong",
             "department": "合约组",
             "info": "<a href=\"https://github.com/haihongS\">github</a>"
         },
         { 
             "name": "小狼", 
             "id": "eileen",
-            "image" : "eileen.png",
             "department": "运营组",
             "info": "<a href=\"https://www.linkedin.com/in/eileen-teng-59225791/\">linkedin</a>"
         },
         { 
             "name": "潇雨", 
             "id": "xiaoyu",
-            "image" : "xiaoyu.png",
-            "department": "交易所组", 
+            "department": "交易所组",
             "info": "test01"
         },
         {   
             "name" : "林可", 
             "id" : "link",
-            "image" : "link.png",
-            "department": "游戏组，图鉴组", 
+            "department": "游戏组，图鉴组",
             "info": "test01"
         },
         { 
             "name": "圣博纳", 
             "id" : "bona",            
-            "image" : "bona.png",
             "department": "图鉴组",
             "info":"test01"
         },
         { 
             "name": "黄鸿昊", 
             "id" : "honghao",            
-            "image": "honghao.png",
             "department": "图鉴组",
             "info": "test01"
         },
         { 
             "name": "飘神", 
             "id" : "xppiao",            
-            "image" : "xppiao.png",
             "department": "交易所组",
             "info": "test01"
         },
         { 
             "name": "柯军", 
             "id" : "kejun",            
-            "image" : "kejun.png",
             "department": "交易所组",
             "info":"test01"
         },
         { 
             "name": "高金", 
             "id" : "gaojin",            
-            "image" : "gaojin.png",
             "department": "工具组",
             "info": "<a href=\"https://jin10086.github.io/\">blog</a> | <a href=\"https://github.com/jin10086\">github</a>","性别":"男","爱好":"女"
         },
         { 
             "name": "冰忆", 
             "id" : "rukata",            
-            "image" : "rukata.png",
             "department": "运营组",
             "info": "<a href=\"https://jin10086.github.io/\">blog</a> | <a href=\"https://github.com/jin10086\">github</a>","性别":"男","爱好":"女"
         },
         { 
             "name": "kds", 
             "id" : "kds",            
-            "image" : "kds.png",
             "department": "游戏组",
             "info": "<a href=\"http://www.h5indiegame.com:9955/\">h5indiegame</a> | <a href=\"http://www.kdsrpg.com/\">kdsrpg</a>"
         },    
         { 
             "name": "瓢虫", 
             "id" : "reg",            
-            "image" : "reg.png",
             "department": "游戏组",
             "info": "策划"
         },
         {
-            "name": "cyy",
-            "id" : "yyc",
-            "image" : "cyy.png",
+            "name": "程莹莹",
+            "id" : "cyy",
             "department": "合约组",
             "info": "合约"
         },
         {
             "name": "阿赖耶石",
             "id" : "alai",
-            "image" : "alai.png",
             "department": "游戏组",
             "info": "助手"
         },
         {
             "name": "林乐乐",
             "id" : "linlele",
-            "image" : "linlele.png",
             "department": "游戏组",
             "info": "团队成员-开发"
         },
         {
             "name": "李淑华",
             "id" : "lishuhua",
-            "image" : "lishuhua.png",
             "department": "游戏组",
             "info": "团队成员-开发"
         },
         {
             "name": "姜林",
             "id" : "jianglin",
-            "image" : "jianglin.png",
             "department": "游戏组",
             "info": "团队成员-开发"
         }
@@ -131,7 +113,7 @@
   "edges": [
         { 
             "source": "minakokojima", 
-            "target": "haihongS", 
+            "target": "haihong",
             "weight": 1
         },
         { 
@@ -191,7 +173,7 @@
         },
         {
           "source": "minakokojima",
-          "target": "yyc",
+          "target": "cyy",
           "weight": 1
         },         
         { 
