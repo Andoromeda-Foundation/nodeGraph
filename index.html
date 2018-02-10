@@ -80,19 +80,21 @@
 		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script>
 
-			$(function(){
-				reload('所有部门','all');
-			});
-
-			var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-
+			var map = L.map('mapid').setView([31.2303904, 121.47370209999997], 13);
 			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 				maxZoom: 18,
 				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
 					'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 					'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 				id: 'mapbox.streets'
-			}).addTo(mymap);
+			}).addTo(map);
+
+			$(function(){
+				// reload('所有部门','all');
+				reload('地图','map');
+
+				mapIcons();
+			});
 			
 
 			function isInArray(value, array) {
@@ -124,20 +126,23 @@
 					"edges": edges
 				}
 			}
+
 			//重新load json
 			function reload(department,liNo) {
-				document.getElementById("mapid").style.visibility='hidden';
-				if(department == '地图') {
-					document.getElementById("mapid").style.visibility='visible';
-					department = '所有部门';
-					liNo = 'all';
-				}
-
 				$('#svg').html('')
 				$('svg').html('')
 
 				$('ul li').removeClass('am-active')
 				$('#'+liNo).addClass('am-active')
+
+				document.getElementById("mapid").style.visibility='hidden';
+				if(department == '地图') {
+					document.getElementById("mapid").style.visibility='visible';
+					department = '所有部门';
+					liNo = 'all';
+
+					return;
+				}
 
 				var width = 900;
 				var height = 800;
@@ -327,6 +332,61 @@
 					});
 				});
 			}
+
+			// 地图上放置头像，无法使用D3
+			function mapIcons() {
+				var img_w = 77;
+				var img_h = 80;
+				var temp_json = {};
+				var nodes = [];
+				var edges = [];
+
+				readTextFile("relation.json", function(text){
+				    var data = JSON.parse(text);
+				    nodes = data["nodes"];
+				    edges = data["edges"];
+				    for (i in nodes) {
+					    var icon = L.icon({
+						    iconUrl: "avatar/" + nodes[i]["id"] + ".png",
+						    iconSize: [img_w, img_h]
+						});
+						var random_lo = Math.random()*(121.5-121.65)+121.5;
+						var random_la = Math.random()*(31.35-31.2)+31.2;
+						L.marker([random_la, random_lo], {icon: icon})
+						.addTo(map)
+						.bindPopup("name:"+nodes[i]["name"]+"<br>"+
+							"id:"+nodes[i]["id"]+"<br>"+
+							"department:"+nodes[i]["department"]+"<br>"+
+							"info:"+nodes[i]["info"]);
+
+						temp_json[nodes[i]["id"]] = [random_la, random_lo];
+				    }
+
+					for (i in edges) {
+						var id_a = edges[i]["source"];
+						var id_b = edges[i]["target"];
+						var latlngs = [
+						    temp_json[id_a],
+						    temp_json[id_b]
+						];
+						var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+					}
+				});
+			}
+
+			// 读取外部json文件
+			function readTextFile(file, callback) {
+			    var rawFile = new XMLHttpRequest();
+			    rawFile.overrideMimeType("application/json");
+			    rawFile.open("GET", file, true);
+			    rawFile.onreadystatechange = function() {
+			        if (rawFile.readyState === 4 && rawFile.status == "200") {
+			            callback(rawFile.responseText);
+			        }
+			    }
+			    rawFile.send(null);
+			}
+
 		</script>
 		<!-- 侧边栏内容 -->
 		<div id="my-offcanvas" class="am-offcanvas">
