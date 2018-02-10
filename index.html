@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		<title>Andoromeda-foundation</title>
 		<link href="//cdn.bootcss.com/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet" />
-		
+
 		<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
 
-	    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
-	    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+		<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
 
 		<style>
 			.nodetext {
@@ -28,18 +28,18 @@
 				stroke: #ff7f0e;
 				stroke-width: 1.5px;
 			}
-
-			#mapid { 
-			    position: absolute;
-				top:50px; 
-				right:0; 
+			
+			#mapid {
+				position: absolute;
+				top: 50px;
+				right: 0;
 				width: 100%;
 				height: 90%;
 			}
-
+			
 			#svg {
-   				position: absolute;	
-				z-index:500;
+				position: absolute;
+				z-index: 500;
 			}
 		</style>
 	</head>
@@ -47,29 +47,29 @@
 	<body>
 		<div id="mapid"></div>
 		<ul class="am-nav am-nav-tabs">
-			<li class="am-active" id='all'>
-				<a href="#"  onclick="reload('所有部门','all')">所有部门</a>
+			<li class="am-active " id='all'>
+				<a href="#" onclick="reload('所有部门','all')">所有部门</a>
 			</li>
-			<li id='hyz' >
+			<li id='hyz'>
 				<a href="#" onclick="reload('合约组','hyz')">合约组</a>
 			</li>
 			<li id='jysz'>
-				<a href="#"  onclick="reload('交易所组','jysz')">交易所组</a>
+				<a href="#" onclick="reload('交易所组','jysz')">交易所组</a>
 			</li>
 			<li id='tjz'>
-				<a href="#"  onclick="reload('图鉴组','tjz')">图鉴组</a>
+				<a href="#" onclick="reload('图鉴组','tjz')">图鉴组</a>
 			</li>
 			<li id='yxz'>
-				<a href="#"  onclick="reload('游戏组','yxz')">游戏组</a>
+				<a href="#" onclick="reload('游戏组','yxz')">游戏组</a>
 			</li>
 			<li id='gjz'>
-				<a href="#"  onclick="reload('工具组','gjz')">工具组</a>
+				<a href="#" onclick="reload('工具组','gjz')">工具组</a>
 			</li>
 			<li id='hdz'>
-				<a href="#"  onclick="reload('运营组','hdz')">运营组</a>
+				<a href="#" onclick="reload('运营组','hdz')">运营组</a>
 			</li>
 			<li id='hdz'>
-				<a href="#"  onclick="reload('地图','map')">地图</a>
+				<a href="#" onclick="reload('地图','map')">地图</a>
 			</li>
 
 		</ul>
@@ -79,9 +79,8 @@
 		<script src="//cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js"></script>
 		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script>
-
-			$(function(){
-				reload('所有部门','all');
+			$(function() {
+				reload('所有部门', 'all');
 			});
 
 			var mymap = L.map('mapid').setView([51.505, -0.09], 13);
@@ -93,7 +92,6 @@
 					'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 				id: 'mapbox.streets'
 			}).addTo(mymap);
-			
 
 			function isInArray(value, array) {
 				return array.indexOf(value) > -1;
@@ -102,7 +100,7 @@
 			function newroot(root, department) {
 
 				var nodes = $.grep(root['nodes'], function(value) {
-					if (value['department'] == undefined) return false;
+					if(value['department'] == undefined) return false;
 					console.log(value['department']);
 					console.log(department);
 					console.log(value['department'].indexOf(department));
@@ -121,14 +119,15 @@
 
 				return {
 					'nodes': nodes,
-					"edges": edges
+					"edges": edges,
+					"department": root.department
 				}
 			}
 			//重新load json
-			function reload(department,liNo) {
-				document.getElementById("mapid").style.visibility='hidden';
+			function reload(department, liNo) {
+				document.getElementById("mapid").style.visibility = 'hidden';
 				if(department == '地图') {
-					document.getElementById("mapid").style.visibility='visible';
+					document.getElementById("mapid").style.visibility = 'visible';
 					department = '所有部门';
 					liNo = 'all';
 				}
@@ -137,7 +136,8 @@
 				$('svg').html('')
 
 				$('ul li').removeClass('am-active')
-				$('#'+liNo).addClass('am-active')
+				$('#' + liNo).addClass('am-active')
+				
 
 				var width = 900;
 				var height = 800;
@@ -157,21 +157,32 @@
 					if(department != '所有部门') {
 						root = newroot(root, department)
 					}
-					console.log(root)
+					
+					var department_info = root["department"][department]
+					var department_info_html = '';
+					for(var entry in department_info) {
+						department_info_html += entry + ' : ' + department_info[entry] + '<br />';
+					}
+					console.log(department_info_html)
+					$('#department').html(department_info_html)
+					
+					
+					
+					
 					//Parse 边的 ID
 					var id = new Object();
-					for (var v in root.nodes){
+					for(var v in root.nodes) {
 						id[root.nodes[v].id] = parseInt(v);
 					}
 
 					var new_edges = [];
-					for (var e in root.edges){
+					for(var e in root.edges) {
 						//console.log(root.edges[e]);
 						root.edges[e].source = id[root.edges[e].source];
 						root.edges[e].target = id[root.edges[e].target];
 						/*  删除无法解析的边？
 						https://segmentfault.com/q/1010000006956973 */
-						if (root.edges[e].source != undefined && root.edges[e].target != undefined ){
+						if(root.edges[e].source != undefined && root.edges[e].target != undefined) {
 							new_edges.push(root.edges[e]);
 						}
 					}
@@ -226,7 +237,7 @@
 								.attr("y", -(img_h / 2 - radius))
 								.attr("width", img_w)
 								.attr("height", img_h)
-								.attr("xlink:href", "avatar/" + d.id+".png")
+								.attr("xlink:href", "avatar/" + d.id + ".png")
 
 							return "url(#catpattern" + i + ")";
 
@@ -340,13 +351,16 @@
 		</div>
 
 		<!-- 底边栏内容 -->
-		<div id="footer" class="footer">
+		<div id="footer" class="am-offcanvas-content" style="position: absolute;top: 910px;background-color: #333333;width: 100%;">
 			<div class="container">
-				<p id='info'>
+				<p id='department'>
 					<a href="https://docs.google.com/document/d/1zAZFR_pNAXTUX459T9JmJNxx1mP4YEQR5KSPqCLvCkc/edit">仙女座计划</a>
 				</p>
 			</div>
-		</div>		
+		</div>
+		
+
+
 
 	</body>
 
