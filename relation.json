@@ -118,7 +118,19 @@
             "id": "jianglin",
             "department": "游戏组",
             "info": "团队成员-开发"
-        }
+        },
+        {
+            "name": "yuii",
+            "id": "yuii",
+            "department": "工具组",
+            "info": ""
+        },   
+        {
+            "name": "Imurgod",
+            "id": "Imurgod",
+            "department": "工具组",
+            "info": ""
+        }            
     ],
     "edges": [
         {
@@ -257,10 +269,10 @@
             "hello": "world"
         },
         "水浒传组": {
-            "info": "<a href='http://cryptohero.pro'>cryptohero.pro</a>",
+            "info": "<a href='http://cryptohero.pro'>cryptohero.pro</a>"
         },
         "智能签名组": {
-            "info": "<a href='https://t.me/smartsignature'>Telegram</a>",
+            "info": "<a href='https://t.me/smartsignature'>Telegram</a>"
         }
     }
 }
