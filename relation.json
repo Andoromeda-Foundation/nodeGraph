@@ -1,13 +1,13 @@
 {
     "nodes": [{
-            "nickname": "岛娘",
+            "name": "岛娘",
             "id": "minakokojima",
             "mission": "People, Fund, Strategy",
-            "department": "合约组，工具组",
+            "department": "合约组，工具组, 水浒传组, 智能签名组",
             "info": "<a href=\"https://www.shuizilong.com/house/\">blog</a> | <a href=\"https://github.com/lychees\">github</a>"
         },
         {
-            "nickname": "5sWind",
+            "name": "5sWind",
             "id": "5sWind",
             "role": "Assistant, Developer, President",
             "department": "",
@@ -240,6 +240,12 @@
         "运营组": {
             "info": "xxx",
             "hello": "world"
+        },
+        "水浒传组": {
+
+        },
+        "智能签名组": {
+
         }
     }
 }
