@@ -120,7 +120,13 @@
             "info": "团队成员-开发"
         }
     ],
-    "edges": [{
+    "edges": [
+        {
+            "source": "minakokojima",
+            "target": "5sWind",
+            "relation": "宝宝"
+        },
+        {
             "source": "minakokojima",
             "target": "haihong",
             "weight": 1
