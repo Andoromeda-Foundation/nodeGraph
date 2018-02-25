@@ -7,8 +7,7 @@
 
 		<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
 
-		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
-		<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzE9xAESye6Kde-3hT-6B90nfwUkcS8Yw"></script>
 
 		<style>
 			.nodetext {
@@ -34,7 +33,7 @@
 				top: 50px;
 				right: 0;
 				width: 100%;
-				height: 90%;
+				height: 850px;
 			}
 			
 			#svg {
@@ -86,15 +85,6 @@
 		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script>
 
-			var map = L.map('mapid', { renderer: L.canvas() }).setView([31.2303904, 121.47370209999997], 13);
-			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-				maxZoom: 18,
-				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-					'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-					'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-				id: 'mapbox.streets'
-			}).addTo(map);
-
 			$(function() {
 				reload('所有部门', 'all');
 			});
@@ -141,9 +131,8 @@
 
 				document.getElementById("mapid").style.visibility='hidden';
 				if(department == '地图') {
+					initMap();
 					document.getElementById("mapid").style.visibility='visible';
-
-					mapIcons();
 
 					return;
 				}
@@ -348,56 +337,120 @@
 				});
 			}
 
-			var markersLayer = new L.LayerGroup();
-			markersLayer.addTo(map)
-			var linesLayer = new L.LayerGroup();
-			linesLayer.addTo(map)
+			// 初始化地图、kml节点信息
+			var map;
+			var xmlDoc;
+			var temp_json = {};
+			function initMap() {
+				if (map != null) return;
+				var mapProp = {
+					center:new google.maps.LatLng(31.2303904, 121.4737021),
+					zoom:13,
+					mapTypeId:google.maps.MapTypeId.ROADMAP
+				};
+				map = new google.maps.Map(document.getElementById("mapid"),mapProp);
+
+				// var ctaLayer = new google.maps.KmlLayer({
+				//         url: 'http://udspj.github.io/resource/g/google_node.kml',
+				//         map: map
+				//       });
+		  		var xmlhttp;
+				if (window.XMLHttpRequest) {
+					xmlhttp = new XMLHttpRequest();
+				} else {
+					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xmlhttp.open("GET","google_node.kml",false);
+				xmlhttp.send();
+				var xmlDoc = xmlhttp.responseXML;
+
+				var nodes = xmlDoc.getElementsByTagName("Placemark");
+				var points = xmlDoc.getElementsByTagName("Point");
+				for ( var i = 0; i < nodes.length; i++ ) {
+					var name_array = nodes[i].childNodes[1].textContent.split(' ');
+					var gps_array = points[i].childNodes[1].textContent.split(',');
+					temp_json[name_array[name_array.length-1]] = [gps_array[1], gps_array[0].replace(/\s+/g,"")];
+				}
+
+				mapIcons();
+			}
+
 			// 地图上放置头像，无法使用D3
 			function mapIcons() {
-				var img_w = 77;
-				var img_h = 80;
-				var temp_json = {};
-				var nodes = [];
-				var edges = [];
-
-				markersLayer.clearLayers();
-				linesLayer.clearLayers();
-
 				readTextFile("relation.json", function(text){
 				    var data = JSON.parse(text);
 				    nodes = data["nodes"];
 				    edges = data["edges"];
+				    var ids = [];
 				    for (i in nodes) {
-					    var icon = L.icon({
-						    iconUrl: "avatar/" + nodes[i]["id"] + ".png",
-						    iconSize: [img_w, img_h]
-						});
-						var random_lo = Math.random()*(121.5-121.65)+121.5;
-						var random_la = Math.random()*(31.35-31.2)+31.2;
-						var marker = L.marker([random_la, random_lo], {icon: icon})
-						// .addTo(map)
-						.bindPopup("name:"+nodes[i]["name"]+"<br>"+
-							"id:"+nodes[i]["id"]+"<br>"+
-							"department:"+nodes[i]["department"]+"<br>"+
-							"info:"+nodes[i]["info"]);
+				    	if (temp_json[nodes[i]["id"]] != null) {
+				    		var la = temp_json[nodes[i]["id"]][0];
+				    		var lo = temp_json[nodes[i]["id"]][1];
 
-						temp_json[nodes[i]["id"]] = [random_la, random_lo];
+				    		var icon = {
+							    url: "avatar/" + nodes[i]["id"] + ".png",
+							    scaledSize: new google.maps.Size(50, 50)
+							};
+				    		var marker = new google.maps.Marker({
+							    position: new google.maps.LatLng(la, lo),
+							    icon: icon
+							});
+							marker.setMap(map);
 
-						markersLayer.addLayer(marker);
+							var content = "name:"+nodes[i]["name"]+"<br>"+
+										"id:"+nodes[i]["id"]+"<br>"+
+										"department:"+nodes[i]["department"]+"<br>"+
+										"info:"+nodes[i]["info"];
+							var infowindow = new google.maps.InfoWindow();
+							google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+							        return function() {
+							           infowindow.setContent(content);
+							           infowindow.open(map,marker);
+							        };
+							    })(marker,content,infowindow));
+				    	}
+				    	ids[i] = nodes[i]["id"];
+				    }
+
+				    for (i in temp_json) {
+				    	if (ids.indexOf(i) < 0) {
+				    		var la = temp_json[i][0];
+				    		var lo = temp_json[i][1];
+
+				    		var icon = {
+							    url: "avatar/default.png",
+							    scaledSize: new google.maps.Size(50, 50)
+							};
+				    		var marker = new google.maps.Marker({
+							    position: new google.maps.LatLng(la, lo),
+							    icon: icon
+							});
+							marker.setMap(map);
+
+							var content = "name:"+i;
+							var infowindow = new google.maps.InfoWindow();
+							google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+							        return function() {
+							           infowindow.setContent(content);
+							           infowindow.open(map,marker);
+							        };
+							    })(marker,content,infowindow));
+				    	}
 				    }
 
 					for (i in edges) {
 						var id_a = edges[i]["source"];
 						var id_b = edges[i]["target"];
-						var latlngs = [
-						    temp_json[id_a],
-						    temp_json[id_b]
-						    // new L.LatLng(temp_json[id_a][0], temp_json[id_a][1], true),
-						    // new L.LatLng(temp_json[id_b][0], temp_json[id_b][1], true)
-						];
-
-						var polyline = L.polyline(latlngs, {color: 'red'});
-						linesLayer.addLayer(polyline);
+						if (temp_json[id_a] != null && temp_json[id_b] != null) {
+							var latlng1 = new google.maps.LatLng(temp_json[id_a][0], temp_json[id_a][1]);
+							var latlng2 = new google.maps.LatLng(temp_json[id_b][0], temp_json[id_b][1]);
+							var line = [latlng1,latlng2];
+							var linePath = new google.maps.Polyline({
+								path:line,
+								strokeColor:"#0000FF"
+							});
+							linePath.setMap(map);
+						}
 					}
 				});
 			}
