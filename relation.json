@@ -247,7 +247,9 @@
             "info": "<a href='https://t.me/smartsignature'>Telegram</a>"
         },          
         "水浒传组": {
-            "info": "<a href='http://cryptohero.pro'>cryptohero.pro</a>"
+            "官网": "<a href='http://cryptohero.pro'>cryptohero.pro</a>",
+            "Github": "<a href='https://github.com/wxygeek/cryptohero-frontend'>Github</a>",
+            "项目总结": "<a href='https://docs.google.com/document/d/1Qn4O2OMUtmOJblSff3byEIVI7oFv8eMBtUkjRpkMn6I/edit?usp=sharing'>项目总结</a>"                                
         },
         "合约组": {
             "info": "<a href='https://docs.google.com/document/d/1kfhtPqE1sBGaqdRsg08_NhCQhQYYTqBsQMMY55pH6r4/edit'>Contract Index</a>"
