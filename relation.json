@@ -243,9 +243,14 @@
             "项目名称": "xxx",
             "相关链接": "<a href='https://docs.google.com/document/d/1zAZFR_pNAXTUX459T9JmJNxx1mP4YEQR5KSPqCLvCkc/edit'>仙女座计划</a>"
         },
+        "智能签名组": {
+            "info": "<a href='https://t.me/smartsignature'>Telegram</a>"
+        },          
+        "水浒传组": {
+            "info": "<a href='http://cryptohero.pro'>cryptohero.pro</a>"
+        },
         "合约组": {
-            "info": "xxx",
-            "hello": "world"
+            "info": "<a href='https://docs.google.com/document/d/1kfhtPqE1sBGaqdRsg08_NhCQhQYYTqBsQMMY55pH6r4/edit'>Contract Index</a>"
         },
         "交易所组": {
             "info": "xxx",
@@ -266,12 +271,6 @@
         "运营组": {
             "info": "xxx",
             "hello": "world"
-        },
-        "水浒传组": {
-            "info": "<a href='http://cryptohero.pro'>cryptohero.pro</a>"
-        },
-        "智能签名组": {
-            "info": "<a href='https://t.me/smartsignature'>Telegram</a>"
         }
     }
 }
