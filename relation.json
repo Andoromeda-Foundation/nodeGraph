@@ -33,7 +33,7 @@
         {
             "name": "林可",
             "id": "link",
-            "department": "游戏组，图鉴组, 水浒传组, 智能签名组",
+            "department": "游戏组，图鉴组, 水浒传组, 智能签名组, 三国志",
             "info": "test01"
         },
         {
@@ -54,6 +54,12 @@
             "department": "交易所组, 水浒传组, 三国志",
             "info": "test01"
         },
+        {
+            "name": "菜神",
+            "id": "nakami",
+            "department": "三国志",
+            "info": "test01"
+        },        
         {
             "name": "柯军",
             "id": "kejun",
