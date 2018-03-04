@@ -4,6 +4,7 @@
             "id": "minakokojima",
             "mission": "People, Fund, Strategy",
             "department": "合约组，工具组, 水浒传组, 智能签名组, 三国志",
+            "duty": "合约, 前端, 游戏, 运营, 支持",
             "info": "<a href=\"https://www.shuizilong.com/house/\">blog</a> | <a href=\"https://github.com/lychees\">github</a>"
         },
         {
@@ -16,6 +17,7 @@
             "name": "海虹",
             "id": "haihong",
             "department": "合约组, 水浒传组, 智能签名组, 三国志",
+            "duty": "合约",   
             "info": "<a href=\"https://github.com/haihongS\">github</a>"
         },
         {
@@ -28,12 +30,14 @@
             "name": "潇雨",
             "id": "xiaoyu",
             "department": "交易所组, 水浒传组, 智能签名组",
+            "duty": "前端, 后端",              
             "info": "test01"
         },
         {
             "name": "林可",
             "id": "link",
             "department": "游戏组，图鉴组, 水浒传组, 智能签名组, 三国志",
+            "duty": "支持",            
             "info": "test01"
         },
         {
@@ -52,24 +56,28 @@
             "name": "飘神",
             "id": "xppiao",
             "department": "交易所组, 水浒传组, 三国志",
+            "duty": "后端, 游戏",             
             "info": "test01"
         },
         {
             "name": "菜神",
             "id": "nakami",
             "department": "三国志",
+            "duty": "游戏",             
             "info": "test01"
         },        
         {
             "name": "柯军",
             "id": "kejun",
             "department": "交易所组, 水浒传组, 智能签名组, 三国志",
+            "duty": "前端, 后端",             
             "info": "test01"
         },
         {
             "name": "高金",
             "id": "gaojin",
             "department": "工具组, 水浒传组, 智能签名组, 三国志",
+            "duty": "后端, 运营, 支持",   
             "info": "<a href=\"https://jin10086.github.io/\">blog</a> | <a href=\"https://github.com/jin10086\">github</a>",
             "性别": "男",
             "爱好": "女"
@@ -78,6 +86,7 @@
             "name": "冰忆",
             "id": "rukata",
             "department": "运营组",
+            "duty": "运营",             
             "info": "<a href=\"https://jin10086.github.io/\">blog</a> | <a href=\"https://github.com/jin10086\">github</a>",
             "性别": "男",
             "爱好": "女"
@@ -86,18 +95,21 @@
             "name": "kds",
             "id": "kds",
             "department": "游戏组",
+            "duty": "游戏",               
             "info": "<a href=\"http://www.h5indiegame.com:9955/\">h5indiegame</a> | <a href=\"http://www.kdsrpg.com/\">kdsrpg</a>"
         },
         {
             "name": "瓢虫",
             "id": "reg",
             "department": "游戏组",
+            "duty": "游戏",            
             "info": "策划"
         },
         {
             "name": "程莹莹",
             "id": "cyy",
             "department": "合约组",
+            "duty": "合约",            
             "info": "合约"
         },
         {
@@ -128,6 +140,7 @@
             "name": "yuii",
             "id": "yuii",
             "department": "工具组, 三国志",
+            "duty": "前端, 后端",            
             "info": ""
         },   
         {
