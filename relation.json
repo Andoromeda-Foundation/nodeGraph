@@ -3,7 +3,7 @@
             "name": "岛娘",
             "id": "minakokojima",
             "mission": "People, Fund, Strategy",
-            "department": "合约组，工具组, 水浒传组, 智能签名组",
+            "department": "合约组，工具组, 水浒传组, 智能签名组, 三国志",
             "info": "<a href=\"https://www.shuizilong.com/house/\">blog</a> | <a href=\"https://github.com/lychees\">github</a>"
         },
         {
@@ -15,7 +15,7 @@
         {
             "name": "海虹",
             "id": "haihong",
-            "department": "合约组, 水浒传组, 智能签名组",
+            "department": "合约组, 水浒传组, 智能签名组, 三国志",
             "info": "<a href=\"https://github.com/haihongS\">github</a>"
         },
         {
@@ -51,19 +51,19 @@
         {
             "name": "飘神",
             "id": "xppiao",
-            "department": "交易所组, 水浒传组",
+            "department": "交易所组, 水浒传组, 三国志",
             "info": "test01"
         },
         {
             "name": "柯军",
             "id": "kejun",
-            "department": "交易所组, 水浒传组, 智能签名组",
+            "department": "交易所组, 水浒传组, 智能签名组, 三国志",
             "info": "test01"
         },
         {
             "name": "高金",
             "id": "gaojin",
-            "department": "工具组, 水浒传组, 智能签名组",
+            "department": "工具组, 水浒传组, 智能签名组, 三国志",
             "info": "<a href=\"https://jin10086.github.io/\">blog</a> | <a href=\"https://github.com/jin10086\">github</a>",
             "性别": "男",
             "爱好": "女"
@@ -121,13 +121,13 @@
         {
             "name": "yuii",
             "id": "yuii",
-            "department": "工具组",
+            "department": "工具组, 三国志",
             "info": ""
         },   
         {
             "name": "Imurgod",
             "id": "Imurgod",
-            "department": "工具组",
+            "department": "",
             "info": ""
         }            
     ],
@@ -251,6 +251,10 @@
             "Github": "<a href='https://github.com/wxygeek/cryptohero-frontend'>Github</a>",
             "项目总结": "<a href='https://docs.google.com/document/d/1Qn4O2OMUtmOJblSff3byEIVI7oFv8eMBtUkjRpkMn6I/edit?usp=sharing'>项目总结</a>"                                
         },
+        "三国志": {
+            "info": "<a href='http://t.me/CryptoHero_Official'>Telegram</a>",
+            "document": "<a href='https://docs.google.com/document/d/1Ko12t2ShNlgHZkpWd2cM80nT99VSrWpRJbUJMt9XgtA/edit#heading=h.e7fji93kz7gm'>Document</a>"
+        },         
         "合约组": {
             "info": "<a href='https://docs.google.com/document/d/1kfhtPqE1sBGaqdRsg08_NhCQhQYYTqBsQMMY55pH6r4/edit'>Contract Index</a>"
         },
