@@ -148,7 +148,15 @@
             "id": "Imurgod",
             "department": "",
             "info": ""
-        }            
+        },
+        {
+            "name": "冯力全",
+            "id": "Flyq",
+            "mission": "People, Fund, Strategy",
+            "department": "合约组",
+            "duty": "合约",
+            "info": "合约"
+        }
     ],
     "edges": [
         {
@@ -255,6 +263,11 @@
             "source": "kds",
             "target": "alai",
             "weight": 1
+        },
+        {
+            "source": "minakokojima",
+            "target": "Flyq",
+            "relation": ""
         }
     ],
     "department": {
