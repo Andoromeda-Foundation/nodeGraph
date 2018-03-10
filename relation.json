@@ -3,7 +3,7 @@
             "name": "岛娘",
             "id": "minakokojima",
             "mission": "People, Fund, Strategy",
-            "department": "合约组，工具组, 水浒传组, 智能签名组, 三国志",
+            "department": "工具, 水浒传, 智能签名, 三国志",
             "duty": "合约, 前端, 游戏, 运营, 支持",
             "info": "<a href=\"https://www.shuizilong.com/house/\">blog</a> | <a href=\"https://github.com/lychees\">github</a>"
         },
@@ -11,51 +11,55 @@
             "name": "5sWind",
             "id": "5sWind",
             "role": "Assistant, Developer, President",
+            "duty": "支持",
             "info": "<a href=\"https://www.linkedin.com/in/hengming-zhang-843183142/\">linkedin</a> | <a href=\"https://github.com/5sWind\">github</a>"
         },
         {
             "name": "海虹",
             "id": "haihong",
-            "department": "合约组, 水浒传组, 智能签名组, 三国志",
+            "department": "水浒传, 智能签名, 三国志",
             "duty": "合约",   
             "info": "<a href=\"https://github.com/haihongS\">github</a>"
         },
         {
             "name": "小狼",
             "id": "eileen",
-            "department": "运营组, 智能签名组",
+            "department": "运营, 智能签名",
+            "duty": "",
             "info": "<a href=\"https://www.linkedin.com/in/eileen-teng-59225791/\">linkedin</a>"
         },
         {
             "name": "潇雨",
             "id": "xiaoyu",
-            "department": "交易所组, 水浒传组, 智能签名组",
+            "department": "交易所, 水浒传, 智能签名",
             "duty": "前端, 后端",              
             "info": "test01"
         },
         {
             "name": "林可",
             "id": "link",
-            "department": "游戏组，图鉴组, 水浒传组, 智能签名组, 三国志",
+            "department": "游戏，图鉴, 水浒传, 智能签名, 三国志",
             "duty": "支持",            
             "info": "test01"
         },
         {
             "name": "圣博纳",
             "id": "bona",
-            "department": "图鉴组",
+            "department": "图鉴",
+            "duty": ""
             "info": "test01"
         },
         {
             "name": "黄鸿昊",
             "id": "honghao",
-            "department": "图鉴组",
+            "department": "图鉴",
+            "duty": ""
             "info": "test01"
         },
         {
             "name": "飘神",
             "id": "xppiao",
-            "department": "交易所组, 水浒传组, 三国志",
+            "department": "交易所, 水浒传, 三国志",
             "duty": "后端, 游戏",             
             "info": "test01"
         },
@@ -69,14 +73,14 @@
         {
             "name": "柯军",
             "id": "kejun",
-            "department": "交易所组, 水浒传组, 智能签名组, 三国志",
+            "department": "交易所, 水浒传, 智能签名, 三国志",
             "duty": "前端, 后端",             
             "info": "test01"
         },
         {
             "name": "高金",
             "id": "gaojin",
-            "department": "工具组, 水浒传组, 智能签名组, 三国志",
+            "department": "工具, 水浒传, 智能签名, 三国志",
             "duty": "后端, 运营, 支持",   
             "info": "<a href=\"https://jin10086.github.io/\">blog</a> | <a href=\"https://github.com/jin10086\">github</a>",
             "性别": "男",
@@ -85,7 +89,7 @@
         {
             "name": "冰忆",
             "id": "rukata",
-            "department": "运营组",
+            "department": "运营",
             "duty": "运营",             
             "info": "<a href=\"https://jin10086.github.io/\">blog</a> | <a href=\"https://github.com/jin10086\">github</a>",
             "性别": "男",
@@ -94,52 +98,56 @@
         {
             "name": "kds",
             "id": "kds",
-            "department": "游戏组",
+            "department": "游戏",
             "duty": "游戏",               
             "info": "<a href=\"http://www.h5indiegame.com:9955/\">h5indiegame</a> | <a href=\"http://www.kdsrpg.com/\">kdsrpg</a>"
         },
         {
             "name": "瓢虫",
             "id": "reg",
-            "department": "游戏组",
+            "department": "游戏",
             "duty": "游戏",            
             "info": "策划"
         },
         {
             "name": "程莹莹",
             "id": "cyy",
-            "department": "合约组",
-            "duty": "合约",            
+            "department": "智能签名",
+            "duty": "合约,支持",            
             "info": "合约"
         },
         {
             "name": "阿赖耶石",
             "id": "alai",
-            "department": "游戏组",
+            "department": "游戏",
+            "duty": "游戏",
             "info": "助手"
         },
         {
             "name": "林乐乐",
             "id": "linlele",
-            "department": "游戏组",
+            "department": "游戏",
+            "duty": "游戏",
             "info": "团队成员-开发"
         },
         {
             "name": "李淑华",
             "id": "lishuhua",
-            "department": "游戏组",
+            "department": "游戏",
+            "duty": "游戏",
             "info": "团队成员-开发"
         },
         {
             "name": "姜林",
             "id": "jianglin",
-            "department": "游戏组",
+            "department": "游戏",
+            "duty": "游戏",
             "info": "团队成员-开发"
         },
         {
             "name": "yuii",
             "id": "yuii",
-            "department": "工具组, 三国志",
+            "department": "工具, 三国志",
             "duty": "前端, 后端",            
             "info": ""
         },   
@@ -147,12 +155,13 @@
             "name": "Imurgod",
             "id": "Imurgod",
             "department": "",
+            "duty": "",
             "info": ""
         },
         {
             "name": "冯力全",
             "id": "Flyq",
-            "department": "合约组",
+            "department": "三国志",
             "duty": "合约",
             "info": "合约"
         }
