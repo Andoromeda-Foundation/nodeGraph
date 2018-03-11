@@ -112,8 +112,8 @@
         {
             "name": "程莹莹",
             "id": "cyy",
-            "department": "智能签名",
-            "duty": "合约,支持",            
+            "department": "交易所,水浒传,智能签名",
+            "duty": "合约,前端,后端,支持",
             "info": "合约"
         },
         {
@@ -253,6 +253,11 @@
             "weight": 1
         },
         {
+            "source": "xiaoyu",
+            "target": "cyy",
+            "weight": 1
+        },
+        {
             "source": "kds",
             "target": "lishuhua",
             "weight": 1
@@ -283,10 +288,10 @@
             "项目名称": "xxx",
             "相关链接": "<a href='https://docs.google.com/document/d/1zAZFR_pNAXTUX459T9JmJNxx1mP4YEQR5KSPqCLvCkc/edit'>仙女座计划</a>"
         },
-        "智能签名组": {
+        "智能签名": {
             "info": "<a href='https://t.me/smartsignature'>Telegram</a>"
         },          
-        "水浒传组": {
+        "水浒传": {
             "官网": "<a href='http://cryptohero.pro'>cryptohero.pro</a>",
             "Github": "<a href='https://github.com/wxygeek/cryptohero-frontend'>Github</a>",
             "项目总结": "<a href='https://docs.google.com/document/d/1Qn4O2OMUtmOJblSff3byEIVI7oFv8eMBtUkjRpkMn6I/edit?usp=sharing'>项目总结</a>"                                
@@ -294,27 +299,50 @@
         "三国志": {
             "info": "<a href='http://t.me/CryptoHero_Official'>Telegram</a>",
             "document": "<a href='https://docs.google.com/document/d/1Ko12t2ShNlgHZkpWd2cM80nT99VSrWpRJbUJMt9XgtA/edit#heading=h.e7fji93kz7gm'>Document</a>"
-        },         
-        "合约组": {
-            "info": "<a href='https://docs.google.com/document/d/1kfhtPqE1sBGaqdRsg08_NhCQhQYYTqBsQMMY55pH6r4/edit'>Contract Index</a>"
         },
-        "交易所组": {
+        "交易所": {
             "info": "xxx",
             "hello": "world"
         },
-        "图鉴组": {
+        "图鉴": {
             "info": "xxx",
             "hello": "world"
         },
-        "游戏组": {
+        "游戏": {
             "info": "xxx",
             "hello": "world"
         },
-        "工具组": {
+        "工具": {
             "info": "xxx",
             "hello": "world"
         },
-        "运营组": {
+        "运营": {
+            "info": "xxx",
+            "hello": "world"
+        }
+    },
+    "duty": {
+        "所有职责": {
+            "info": "xxx",
+            "hello": ""
+        },
+        "合约": {
+            "info": "",
+            "hello":""
+        },
+        "前端": {
+            "info": "",
+            "hello":""
+        },
+        "后端": {
+            "info": "",
+            "hello":""
+        },
+        "运营": {
+            "info": "xxx",
+            "hello": "world"
+        },
+        "支持": {
             "info": "xxx",
             "hello": "world"
         }
