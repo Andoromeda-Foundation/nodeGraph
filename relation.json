@@ -286,7 +286,8 @@
     "department": {
         "所有部门": {
             "项目名称": "xxx",
-            "相关链接": "<a href='https://docs.google.com/document/d/1zAZFR_pNAXTUX459T9JmJNxx1mP4YEQR5KSPqCLvCkc/edit'>仙女座计划</a>"
+            "相关链接": "<a href='https://liangniao.wordpress.com/>仙女座计划</a>"
+            //"相关链接": "<a href='https://docs.google.com/document/d/1zAZFR_pNAXTUX459T9JmJNxx1mP4YEQR5KSPqCLvCkc/edit'>仙女座计划</a>"
         },
         "智能签名": {
             "info": "<a href='https://t.me/smartsignature'>Telegram</a>"
